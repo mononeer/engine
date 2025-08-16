@@ -9,6 +9,20 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
+# --- Dependencies ---
+# Use FetchContent to manage external libraries at configure time
+include(FetchContent)
+
+# spdlog - Fast C++ logging library
+FetchContent_Declare(
+  spdlog
+  GIT_REPOSITORY https://github.com/gabime/spdlog.git
+  GIT_TAG        v1.14.1 # A recent stable version
+)
+# Make the dependency available to the project
+FetchContent_MakeAvailable(spdlog)
+
+
 # Add the primary subdirectories to the build configuration
 add_subdirectory(revolt)
 add_subdirectory(modules)
