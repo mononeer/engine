@@ -1,5 +1,8 @@
 #pragma once
 
+#include "project/Project.h" // Include the new Project header
+#include <memory>             // For std::unique_ptr
+
 namespace Revolt {
 
     class Engine {
@@ -22,8 +25,11 @@ namespace Revolt {
          */
         void Shutdown();
 
+        const Project& GetProject() const;
+
     private:
         bool m_IsRunning = false;
+        std::unique_ptr<Project> m_Project;
     };
 
 } // namespace Revolt

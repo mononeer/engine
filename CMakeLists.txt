@@ -22,6 +22,14 @@ FetchContent_Declare(
 # Make the dependency available to the project
 FetchContent_MakeAvailable(spdlog)
 
+# nlohmann_json - JSON for Modern C++
+FetchContent_Declare(
+  nlohmann_json
+  GIT_REPOSITORY https://github.com/nlohmann/json.git
+  GIT_TAG        v3.11.3 # A recent stable version
+)
+FetchContent_MakeAvailable(nlohmann_json)
+
 
 # Add the primary subdirectories to the build configuration
 add_subdirectory(revolt)

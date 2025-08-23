@@ -2,6 +2,7 @@
 add_executable(RevoltEngine
     src/main.cpp
     src/Engine.cpp
+    src/project/Project.cpp
 )
 
 # Link the engine against the spdlog library.
